@@ -15,21 +15,50 @@
     $messi=$_GET['messi'];
     $ronaldo=$_GET['ronaldo'];
     $griezman=$_GET['griezman'];
-    if (is_numeric($messi) && is_numeric($ronaldo) && is_numeric($griezman)){
-        if ($messi<=100 && $ronaldo<=100 && $griezman<=100){
-            if ($messi+$ronaldo+$griezman==100){
-                echo "<div style='border: 2px solid red'>
-                    hola mundo
-                    </div>";
-                echo $griezman,$ronaldo,$messi;
-            }else{
-               header('Location: index.php?messi=$messi&');
-            }
-        }else{
-            header('location: index.php');
+    $error=0;
+    if (($messi+$ronaldo+$griezman)==100) {
+       if ($messi>1 && $ronaldo>1 && $griezman>1){
+           echo "<p>messi</p><p>";
+           for ($a=1;$a<=$messi;$a++){
+               echo "*";
+           }
+           echo("</p>");
+           echo "<p>ronaldo</p><p>";
+           for ($a=1;$a<=$ronaldo;$a++){
+               echo "*";
+           }
+           echo("</p>");
+           echo "<p>griezman</p><p>";
+           for ($a=1;$a<=$griezman;$a++){
+               echo "*";
+           }
+           echo("</p>");
+           echo "<a href='index.php?messi=$messi&ronaldo=$ronaldo&griezman=$griezman'>volver</a>";
+       }
+    }elseif(($messi+$ronaldo+$griezman)<100) {
+        if ($messi<0 || $messi>100){
+            $error=$error+1;
         }
-    }else{
-        header('location: index.php');
+        if ($ronaldo<0 || $ronaldo>100){
+            $error=$error+2;
+        }
+        if ($griezman<0 || $griezman>100){
+            $error=$error+4;
+        }
+        $error=$error+8;
+        header("Location: index.php?error=$error&messi=$messi&ronaldo=$ronaldo&griezman=$griezman");
+    }elseif(($messi+$ronaldo+$griezman)>100) {
+        if ($messi<0 || $messi>100){
+            $error=$error+1;
+        }
+        if ($ronaldo<0 || $ronaldo>100){
+            $error=$error+2;
+        }
+        if ($griezman<0 || $griezman>100){
+            $error=$error+4;
+        }
+        $error=$error+16;
+        header("Location: index.php?error=$error&messi=$messi&ronaldo=$ronaldo&griezman=$griezman");
     }
 ?>
 </body>
