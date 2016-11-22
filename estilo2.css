@@ -1,0 +1,47 @@
+body{
+    background-image: url("img/oro.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#principal{
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5px 10px;
+    margin:auto;
+    margin-top:15%;
+    height: 300px;
+    width: 700px;
+}
+
+p{
+    margin:0;
+    display: inline-block;
+    width: 80%;
+}
+#resultado{
+    padding-top: 15%;
+    padding-left: 5%;
+}
+.nombre{
+    width: 20%;
+}
+#messi{
+    color:blue;
+}
+#ronaldo{
+    color: white;
+}
+#griezman{
+    color: red;
+}
+a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    background-color: lightgray;
+    border-radius: 5px 5px;
+    text-align: center;
+    margin-top: 2.5%;
+    width: 60%;
+    height: 15%;
+    margin-left: 18%;
+}

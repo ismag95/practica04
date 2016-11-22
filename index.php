@@ -19,27 +19,27 @@ if (isset($_GET['messi']) && isset($_GET['ronaldo'] )&& isset($_GET['griezman'])
 if (isset($_GET['error'])){
     $error=$_GET['error'];
     if ($error&8){
-        echo "<h1>la suma es menor de 100</h1>";
+        echo "<h2>la suma es menor de 100</h2>";
         if ($error&1){
-            echo "<h1>messi mal</h1>";
+            echo "<h2>messi mal</h2>";
         }
         if ($error&2){
-            echo "<h1>ronaldo mal</h1>";
+            echo "<h2>ronaldo mal</h2>";
         }
         if ($error&4){
-            echo "<h1>griezman mal</h1>";
+            echo "<h2>griezman mal</h2>";
         }
     }
     if ($error&16){
-        echo "<h1>la suma es mayor de 100</h1>";
+        echo "<h2>la suma es mayor de 100</h2>";
         if ($error&1){
-            echo "<h1>messi mal</h1>";
+            echo "<h2>messi mal</h2>";
         }
         if ($error&2){
-            echo "<h1>ronaldo mal</h1>";
+            echo "<h2>ronaldo mal</h2>";
         }
         if ($error&4){
-            echo "<h1>griezman mal</h1>";
+            echo "<h2>griezman mal</h2>";
         }
     }
 }
@@ -87,6 +87,7 @@ if (isset($_GET['error'])){
         }
         ?>><br>
         <button>enviar</button>
+
     </form>
 </div>
 </body>

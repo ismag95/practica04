@@ -9,6 +9,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="estilo2.css">
 </head>
 <body>
 <?php
@@ -18,22 +19,26 @@
     $error=0;
     if (($messi+$ronaldo+$griezman)==100) {
        if ($messi>1 && $ronaldo>1 && $griezman>1){
-           echo "<p>messi</p><p>";
+           echo "<div id='principal'>";
+           echo "<div id='resultado'>";
+           echo "<p class='nombre' id='messi'>messi</p><p id='messi'>";
            for ($a=1;$a<=$messi;$a++){
                echo "*";
            }
            echo("</p>");
-           echo "<p>ronaldo</p><p>";
+           echo "<p class='nombre' id='ronaldo'>ronaldo</p><p id='ronaldo'>";
            for ($a=1;$a<=$ronaldo;$a++){
                echo "*";
            }
            echo("</p>");
-           echo "<p>griezman</p><p>";
+           echo "<p class='nombre' id='griezman'>griezman</p><p id='griezman'>";
            for ($a=1;$a<=$griezman;$a++){
                echo "*";
            }
            echo("</p>");
+           echo "</div>";
            echo "<a href='index.php?messi=$messi&ronaldo=$ronaldo&griezman=$griezman'>volver</a>";
+           echo "</div>";
        }
     }elseif(($messi+$ronaldo+$griezman)<100) {
         if ($messi<0 || $messi>100){
